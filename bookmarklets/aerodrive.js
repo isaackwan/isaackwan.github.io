@@ -1,4 +1,4 @@
-var exp1=/var\sFilename\s=\s\"\w+\.\w+/g, container=[], result='', curr, curr2;
+var exp1=/var\sFilename\s=\s\"\w+\.\w+/g, count=0, container=[], result='', curr, curr2;
 function getURLParameter(name) {
     return decodeURI(
         (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search)||[,null])[1]
@@ -14,10 +14,11 @@ function parse(data) {
 		}
 	}
 }
+parse(jQuery('body').html());
 jQuery('.netvigate').each(function() {
 	jQuery.get(jQuery(this).attr('href'), function(data) {
 		parse(data);
+		count++;
+		if (count == jQuery('.netvigate').length) {setTimeout(function(){jQuery('body').html(result);},3000);}
 	});
 });
-parse(jQuery('body').html());
-jQuery('body').html(result);
