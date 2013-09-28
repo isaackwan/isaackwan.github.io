@@ -10,15 +10,16 @@ function parse(data) {
 		curr2=curr[i].replace('var Filename = "','');
 		if (container.indexOf(curr2)<0) {
 			container.push(curr2);
-			result = result + "<br>http://aerodrive.ccsc.edu.hk/myoffice/handle/guest" + getURLParameter('target') + "/" + curr2;
+			jQuery('#resu').append("http://aerodrive.ccsc.edu.hk/myoffice/handle/guest" + getURLParameter('target') + "/" + curr2 + "\n");
 		}
 	}
 }
+jQuery('body').append("<textarea id='resu' style='display:none;position:absolute;top:100px;width:50%;z-index:2;' onmouseover='this.focus();this.select();'></textarea>");
 parse(jQuery('body').html());
 jQuery('.netvigate').each(function() {
 	jQuery.get(jQuery(this).attr('href'), function(data) {
 		parse(data);
 		count++;
-		if (count == jQuery('.netvigate').length) {setTimeout(function(){jQuery('body').html(result);},3000);}
+		if (count == jQuery('.netvigate').length) {jQuery('#resu').css('display','block');}
 	});
 });
