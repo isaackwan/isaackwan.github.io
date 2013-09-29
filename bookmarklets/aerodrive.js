@@ -14,7 +14,7 @@ function parse(data) {
 		}
 	}
 }
-jQuery('body').append("<textarea id='resu' style='display:none;position:absolute;top:100px;width:50%;z-index:2;' onmouseover='this.focus();this.select();'></textarea>");
+jQuery('body').append("<textarea id='resu' style='display:none;position:fixed;top:100px;width:50%;height:200px;z-index:2;' onmouseover='this.focus();this.select();'></textarea>");
 parse(jQuery('body').html());
 jQuery('.netvigate').each(function() {
 	jQuery.get(jQuery(this).attr('href'), function(data) {
