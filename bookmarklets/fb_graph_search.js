@@ -1,6 +1,6 @@
 var jconf=confirm('Have you scrolled to the end of results?');
 if (jconf) {
-var jexp=/(s|p)\d\d\dx\d\d\d\//g,jpic="";
+var jexp=/(s|p)\d\d\dx\d\d\d\//g;
 document.body.innerHTML=document.body.innerHTML + "<textarea id='jresu' style='display:none;position:fixed;top:100px;width:50%;height:200px;z-index:2;' onmouseover='this.focus();this.select();'></textarea>";
 var jelem=document.querySelectorAll('[data-bt*="ct"][data-bt*="result"]');
 for (var j=0; j<jelem.length; j++) {
