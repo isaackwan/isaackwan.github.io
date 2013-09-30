@@ -7,4 +7,6 @@ for (var j=0; j<jelem.length; j++) {
 	document.getElementById('jresu').innerHTML=document.getElementById('jresu').innerHTML + "\n" + jelem[j].src.replace(jexp, '').replace('https','http');
 }
 document.getElementById('jresu').style.display='block';
+document.getElementById('jresu').focus();
+document.getElementById('jresu').select();
 }
