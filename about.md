@@ -4,8 +4,6 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+Hello! Welcome to my blog. I am not quite sure how you stumbled upon my blog, but I do believe that you are as geeky as me. (Or more geeky than I do!)
 
-You can find the source code for the Jekyll new theme at: [github.com/jglovier/jekyll-new](https://github.com/jglovier/jekyll-new)
-
-You can find the source code for Jekyll at [github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
+I would like to thank you for visiting my blog. Feel free to email me at [blog@i...](http://www.google.com/recaptcha/mailhide/d?k=01_Rzau8oPP2aLIBaM9OAUQA==&c=OI9Phjp-qOas7xtucLN0eQ==), even if you just want to say hi!
