@@ -3,7 +3,7 @@ title: Isaac's geeky blog
 email: blog@isaac.pw
 description: This is a blog concerning all sort of stuff that interests me. Web app development, system administration and the Internet.
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://isaackwan.github.io" # the base hostname & protocol for your site
+url: "https://isaackwan.github.io" # the base hostname & protocol for your site
 github_username: isaackwan
 timezone: Asia/Hong_Kong
 
