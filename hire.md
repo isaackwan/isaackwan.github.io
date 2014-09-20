@@ -9,7 +9,7 @@ Need a helping hand on the most tough issue that you have ever encountered? Have
 I work on a freelance basis for web development, consultation and server administration. Why me?
 
 * &gt; 10 years of experience in HTML
-* Management AND technical experience on keeping a business running smooth (owner of a 5-year-old web hosting company)
+* Managerial AND technical experience on keeping a business running smooth (owner of a 5-year-old web hosting company)
 * Follow best practices to ensure highest possible performance and security
 * Fair hourly rate
 
