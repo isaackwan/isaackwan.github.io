@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<script>var _rollbarConfig={accessToken:"2c6a26482d134adc9ea13a5614f3a806",captureUncaught:!0,captureUnhandledRejections:!1,payload:{environment:"production"}};!function(r){function e(n){if(o[n])return o[n].exports;var t=o[n]={exports:{},id:n,loaded:!1};return r[n].call(t.exports,t,t.exports,e),t.loaded=!0,t.exports}var o={};return e.m=r,e.c=o,e.p="",e(0)}([function(r,e,o){"use strict";var n=o(1).Rollbar,t=o(2);_rollbarConfig.rollbarJsUrl=_rollbarConfig.rollbarJsUrl||"https://d37gvrvc0wt4s1.cloudfront.net/js/v1.9/rollbar.min.js";var a=n.init(window,_rollbarConfig),i=t(a,_rollbarConfig);a.loadFull(window,document,!_rollbarConfig.async,_rollbarConfig,i)},function(r){"use strict";function e(r){return function(){try{return r.apply(this,arguments)}catch(e){try{console.error("[Rollbar]: Internal error",e)}catch(o){}}}}function o(r,e,o){window._rollbarWrappedError&&(o[4]||(o[4]=window._rollbarWrappedError),o[5]||(o[5]=window._rollbarWrappedError._rollbarContext),window._rollbarWrappedError=null),r.uncaughtError.apply(r,o),e&&e.apply(window,o)}function n(r){var e=function(){var e=Array.prototype.slice.call(arguments,0);o(r,r._rollbarOldOnError,e)};return e.belongsToShim=!0,e}function t(r){this.shimId=++l,this.notifier=null,this.parentShim=r,this._rollbarOldOnError=null}function a(r){var o=t;return e(function(){if(this.notifier)return this.notifier[r].apply(this.notifier,arguments);var e=this,n="scope"===r;n&&(e=new o(this));var t=Array.prototype.slice.call(arguments,0),a={shim:e,method:r,args:t,ts:new Date};return window._rollbarShimQueue.push(a),n?e:void 0})}function i(r,e){if(e.hasOwnProperty&&e.hasOwnProperty("addEventListener")){var o=e.addEventListener;e.addEventListener=function(e,n,t){o.call(this,e,r.wrap(n),t)};var n=e.removeEventListener;e.removeEventListener=function(r,e,o){n.call(this,r,e&&e._wrapped?e._wrapped:e,o)}}}var l=0;t.init=function(r,o){var a=o.globalAlias||"Rollbar";if("object"==typeof r[a])return r[a];r._rollbarShimQueue=[],r._rollbarWrappedError=null,o=o||{};var l=new t;return e(function(){if(l.configure(o),o.captureUncaught){l._rollbarOldOnError=r.onerror,r.onerror=n(l);var e,t,c="EventTarget,Window,Node,ApplicationCache,AudioTrackList,ChannelMergerNode,CryptoOperation,EventSource,FileReader,HTMLUnknownElement,IDBDatabase,IDBRequest,IDBTransaction,KeyOperation,MediaController,MessagePort,ModalWindow,Notification,SVGElementInstance,Screen,TextTrack,TextTrackCue,TextTrackList,WebSocket,WebSocketWorker,Worker,XMLHttpRequest,XMLHttpRequestEventTarget,XMLHttpRequestUpload".split(",");for(e=0;e<c.length;++e)t=c[e],r[t]&&r[t].prototype&&i(l,r[t].prototype)}return o.captureUnhandledRejections&&(l._unhandledRejectionHandler=function(r){var e=r.reason,o=r.promise,n=r.detail;!e&&n&&(e=n.reason,o=n.promise),l.unhandledRejection(e,o)},r.addEventListener("unhandledrejection",l._unhandledRejectionHandler)),r[a]=l,l})()},t.prototype.loadFull=function(r,o,n,t,a){var i=function(){var e;if(void 0===r._rollbarPayloadQueue){var o,n,t,i;for(e=new Error("rollbar.js did not load");o=r._rollbarShimQueue.shift();)for(t=o.args,i=0;i<t.length;++i)if(n=t[i],"function"==typeof n){n(e);break}}"function"==typeof a&&a(e)},l=!1,c=o.createElement("script"),d=o.getElementsByTagName("script")[0],p=d.parentNode;c.crossOrigin="",c.src=t.rollbarJsUrl,c.async=!n,c.onload=c.onreadystatechange=e(function(){if(!(l||this.readyState&&"loaded"!==this.readyState&&"complete"!==this.readyState)){c.onload=c.onreadystatechange=null;try{p.removeChild(c)}catch(r){}l=!0,i()}}),p.insertBefore(c,d)},t.prototype.wrap=function(r,e){try{var o;if(o="function"==typeof e?e:function(){return e||{}},"function"!=typeof r)return r;if(r._isWrap)return r;if(!r._wrapped){r._wrapped=function(){try{return r.apply(this,arguments)}catch(e){throw e._rollbarContext=o()||{},e._rollbarContext._wrappedSource=r.toString(),window._rollbarWrappedError=e,e}},r._wrapped._isWrap=!0;for(var n in r)r.hasOwnProperty(n)&&(r._wrapped[n]=r[n])}return r._wrapped}catch(t){return r}};for(var c="log,debug,info,warn,warning,error,critical,global,configure,scope,uncaughtError,unhandledRejection".split(","),d=0;d<c.length;++d)t.prototype[c[d]]=a(c[d]);r.exports={Rollbar:t,_rollbarWindowOnError:o}},function(r){"use strict";r.exports=function(r,e){return function(o){if(!o&&!window._rollbarInitialized){var n=window.RollbarNotifier,t=e||{},a=t.globalAlias||"Rollbar",i=window.Rollbar.init(t,r);i._processShimQueue(window._rollbarShimQueue||[]),window[a]=i,window._rollbarInitialized=!0,n.processPayloads()}}}}]);</script>
+
+</head>
+
+<body>
+	<input id="fileItem" type="file" multiple>
+	<div id="progress"></div>
+	<script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery/3.1.0/jquery.min.js"></script>
+	<script>
+"use strict";
+
+		var config = {
+			apiKey: "AIzaSyD215tT-PIUqllt3QgqqoE5H_Uy7p6_jGg",
+			authDomain: "pkp-up-pic.firebaseapp.com",
+			databaseURL: "https://pkp-up-pic.firebaseio.com",
+			storageBucket: "pkp-up-pic.appspot.com" };
+		firebase.initializeApp(config);
+		var storageRef = firebase.storage().ref();
+		$(function () {
+			$("#fileItem").on("change", function () {
+				var fileInput = document.getElementById("fileItem");
+				var files = fileInput.files;
+
+				var _loop = function () {
+					file = files[i];
+					dom = $("<p style='margin-bottom:2em'></p>");
+
+					dom.text("Uploading " + file.name);
+					dom.appendTo("#progress");
+					var progressDom = $("<p></p>");
+					progressDom.appendTo(dom);
+					var uploadTask = storageRef.child("" + Math.random() + Math.random() + Math.random() + file.name).put(file);
+					uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
+					function (snapshot) {
+						var progress = snapshot.bytesTransferred / snapshot.totalBytes * 100;
+						progressDom.text(Math.round(progress) + "% done");
+						switch (snapshot.state) {
+							case firebase.storage.TaskState.PAUSED:
+								// or 'paused'
+								console.log("Upload is paused");
+								break;
+							case firebase.storage.TaskState.RUNNING:
+								// or 'running'
+								console.log("Upload is running");
+								break;
+						}
+					}, function () {
+						alert("error!");
+					}, function () {
+						progressDom.text("Done!");
+					});
+				};
+
+				for (var i = 0; i < files.length; i++) {
+					var file;
+					var dom;
+
+					_loop();
+				}
+			});
+		});
+		/*var config = {
+			apiKey: "AIzaSyD215tT-PIUqllt3QgqqoE5H_Uy7p6_jGg",
+			authDomain: "pkp-up-pic.firebaseapp.com",
+			databaseURL: "https://pkp-up-pic.firebaseio.com",
+			storageBucket: "pkp-up-pic.appspot.com",
+		};
+		firebase.initializeApp(config);
+		var storageRef = firebase.storage().ref();
+		$(function () {
+			$("#fileItem").on("change", function(){
+				var fileInput = document.getElementById("fileItem");
+				var files = fileInput.files;
+				for (var i = 0; i < files.length; i++) {
+					var file = files[i];
+					var dom = $("<p style='margin-bottom:2em'></p>");
+					dom.text("Uploading " + file.name);
+					dom.appendTo("#progress");
+					let progressDom = $("<p></p>")
+					progressDom.appendTo(dom);
+					let uploadTask = storageRef.child("" + Math.random() + Math.random() + Math.random() + file.name).put(file);
+					uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
+					function (snapshot) {
+						var progress = snapshot.bytesTransferred / snapshot.totalBytes * 100;
+						progressDom.text(Math.round(progress) + "% done");
+						switch (snapshot.state) {
+							case firebase.storage.TaskState.PAUSED:
+								// or 'paused'
+								console.log("Upload is paused");
+								break;
+							case firebase.storage.TaskState.RUNNING:
+								// or 'running'
+								console.log("Upload is running");
+								break;
+						}
+					}, function () {
+						alert("error!");
+					}, function () {
+						progressDom.text("Done!");
+					});
+				}
+			});
+		});*/
+	</script>
+</body>
+
+</html>
